@@ -34,6 +34,12 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wex-nv-Und">
+                                <rect key="frame" x="300" y="91" width="94" height="29"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="beN-fP-Esk"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="0.84608807620000004" green="1" blue="0.80899394530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -43,6 +49,9 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tYP-kD-R7o" secondAttribute="trailing" constant="20" id="LEN-fJ-0vq"/>
                             <constraint firstItem="r4r-1f-YjP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="ONd-T0-imc"/>
                             <constraint firstItem="tYP-kD-R7o" firstAttribute="top" secondItem="r4r-1f-YjP" secondAttribute="bottom" constant="43" id="VeF-As-xXE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wex-nv-Und" secondAttribute="trailing" constant="20" id="Y4z-rf-bU1"/>
+                            <constraint firstItem="wex-nv-Und" firstAttribute="leading" secondItem="r4r-1f-YjP" secondAttribute="trailing" constant="190" id="YbW-2F-46R"/>
+                            <constraint firstItem="tYP-kD-R7o" firstAttribute="top" secondItem="wex-nv-Und" secondAttribute="bottom" constant="35" id="chS-tp-fPX"/>
                             <constraint firstItem="tYP-kD-R7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gEt-yf-3kJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -50,6 +59,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                     <connections>
                         <outlet property="bottomConstraint" destination="CmA-cR-Fnt" id="AQa-kY-Jcz"/>
                         <outlet property="countLabel" destination="r4r-1f-YjP" id="Fcf-qr-xZN"/>
+                        <outlet property="stepper" destination="wex-nv-Und" id="lIk-KF-MQf"/>
                         <outlet property="textView" destination="tYP-kD-R7o" id="yr7-GX-zqi"/>
                     </connections>
                 </viewController>
