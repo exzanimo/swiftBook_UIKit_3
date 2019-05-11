@@ -14,12 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
-        textView.text = ""
+        
+        textView.isHidden = true
+        textView.alpha = 0 //прозрачность
+        
+      //  textView.text = ""
         
         textView.font = UIFont(name: "Optima-Regular", size: 18)
         textView.backgroundColor = view.backgroundColor
@@ -34,10 +39,24 @@ class ViewController: UIViewController {
         stepper.backgroundColor = .gray
         stepper.layer.cornerRadius = 5
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) ////Color Literal
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents() //блокировка интерфейса на момент окна загрузки
+        
+        
         //Отслеживаем появление клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification: )), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         //Отслеживаем скрытие клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
+          self.textView.alpha = 1
+        }) { (fineshed) in
+            self.activityIndicator.stopAnimating()
+            self.textView.isHidden = false
+            UIApplication.shared.endIgnoringInteractionEvents() //разблокировка экрана
+        }
     }
     
     //скрытие клавиатуры по тапу за пределами текст вью
