@@ -41,14 +41,19 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 </connections>
                             </stepper>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jOJ-J9-mWg">
-                                <rect key="frame" x="197" y="345" width="20" height="20"/>
+                                <rect key="frame" x="197" y="345.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hr1-N7-hpP">
+                                <rect key="frame" x="20" y="155" width="374" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.84608807620000004" green="1" blue="0.80899394530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Hr1-N7-hpP" firstAttribute="centerX" secondItem="tYP-kD-R7o" secondAttribute="centerX" id="1Pj-Ia-IgI"/>
                             <constraint firstItem="r4r-1f-YjP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5pA-6s-Vr9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tYP-kD-R7o" secondAttribute="bottom" constant="306" id="CmA-cR-Fnt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4r-1f-YjP" secondAttribute="trailing" constant="304" id="HHu-hG-C0Y"/>
+                            <constraint firstItem="Hr1-N7-hpP" firstAttribute="width" secondItem="tYP-kD-R7o" secondAttribute="width" id="Ita-OI-NHd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tYP-kD-R7o" secondAttribute="trailing" constant="20" id="LEN-fJ-0vq"/>
                             <constraint firstItem="r4r-1f-YjP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="ONd-T0-imc"/>
                             <constraint firstItem="jOJ-J9-mWg" firstAttribute="centerX" secondItem="tYP-kD-R7o" secondAttribute="centerX" id="S5M-uU-rza"/>
@@ -56,6 +61,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wex-nv-Und" secondAttribute="trailing" constant="20" id="Y4z-rf-bU1"/>
                             <constraint firstItem="wex-nv-Und" firstAttribute="leading" secondItem="r4r-1f-YjP" secondAttribute="trailing" constant="190" id="YbW-2F-46R"/>
                             <constraint firstItem="tYP-kD-R7o" firstAttribute="top" secondItem="wex-nv-Und" secondAttribute="bottom" constant="35" id="chS-tp-fPX"/>
+                            <constraint firstItem="Hr1-N7-hpP" firstAttribute="top" secondItem="tYP-kD-R7o" secondAttribute="top" id="e9n-G2-5N3"/>
                             <constraint firstItem="jOJ-J9-mWg" firstAttribute="centerY" secondItem="tYP-kD-R7o" secondAttribute="centerY" id="fah-Kf-RtA"/>
                             <constraint firstItem="tYP-kD-R7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gEt-yf-3kJ"/>
                         </constraints>
@@ -65,6 +71,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                         <outlet property="activityIndicator" destination="jOJ-J9-mWg" id="dPV-xf-FOI"/>
                         <outlet property="bottomConstraint" destination="CmA-cR-Fnt" id="AQa-kY-Jcz"/>
                         <outlet property="countLabel" destination="r4r-1f-YjP" id="Fcf-qr-xZN"/>
+                        <outlet property="progressView" destination="Hr1-N7-hpP" id="6rN-CK-eRm"/>
                         <outlet property="stepper" destination="wex-nv-Und" id="lIk-KF-MQf"/>
                         <outlet property="textView" destination="tYP-kD-R7o" id="eJR-vA-bEs"/>
                     </connections>
